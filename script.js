@@ -23,3 +23,12 @@ const closeModal = function () {
 
 btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
+
+//Close modal on pressing ESC Key
+//keypress events are the global events so they dont happen on any particular element
+document.addEventListener('keydown', function (event) {
+  //console.log(event.key);
+  if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
+  }
+});
